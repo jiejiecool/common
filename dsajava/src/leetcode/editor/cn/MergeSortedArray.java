@@ -41,7 +41,7 @@ public class MergeSortedArray{
 		Solution solution = new MergeSortedArray().new Solution();
 		int[] nums1 = new int[]{1,2,3,0,0,0};
 		int[] nums2 = new int[]{2,5,6};
-		solution.merge(nums1, 3, nums2, 3);
+		solution.merge2(nums1, 3, nums2, 3);
 
 		System.out.println(Arrays.toString(nums1));
 	}
@@ -61,6 +61,30 @@ class Solution {
 			nums1[last --] = nums2[num2Last--];
 		}
     }
+
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
+		int totalLen = nums1.length;
+		int i = 0;
+		int left = m -1;
+		int right = n -1;
+		for (i = totalLen -1 ; i >= 0; i--) {
+			if (left >= 0 && right >= 0) {
+				if (nums1[left] < nums2[right]) {
+					nums1[i] = nums2[right--];
+				} else {
+					nums1[i] = nums1[left--];
+				}
+			}
+
+		}
+
+		if ( right > 0) {
+			while (right >=0) {
+				nums1[i--] = nums2[right--];
+			}
+
+		}
+	}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

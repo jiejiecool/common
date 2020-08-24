@@ -42,25 +42,25 @@ public class DuplicateZeros{
 		int[] arr = new int[]{1,0,2,3,0,4,5,0};
 		solution.duplicateZeros(arr);
 		System.out.println(Arrays.toString(arr));
-	}
-	
+				}
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public void duplicateZeros(int[] arr) {
+	public void duplicateZeros(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == 0) {
 				insertAnySlot(arr, 0, i);
 				i++;
 			}
 		}
-    }
+	}
 
-    void insertAnySlot(int[] arr, int item, int slot) {
-    	for (int i = arr.length; i >= slot; i--) {
-    		if ((i+1) >= arr.length) continue;
-    		arr[i+1] = arr[i];
+	void insertAnySlot(int[] arr, int item, int slot) {
+		for (int i = arr.length; i >= slot; i--) {
+			if ((i+1) >= arr.length) continue;
+			arr[i+1] = arr[i];
 		}
-    	arr[slot] = item;
+		arr[slot] = item;
 	}
 
 }
