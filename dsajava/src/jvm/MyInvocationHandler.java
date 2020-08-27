@@ -1,7 +1,8 @@
 package jvm;
 
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
